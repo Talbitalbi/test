@@ -1,0 +1,2 @@
+# Ignore the website folder
+terraform/infra-dev/polkadot-snapshot/polkadot-snapshot-website/static/js/**
