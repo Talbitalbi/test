@@ -39,6 +39,9 @@ async function do_listing(env: Env, bucket: R2Bucket, prefix: string, title: str
 		cursor = next.truncated ? next.cursor : undefined;
 	}
 
+	const getHeight = s => +s.key.match(/height_(\d+)/)[1];
+	listed.objects.sort((a, b) => getHeight(b) - getHeight(a));
+
 	let html = `<!DOCTYPE html>
         <body>
           <h1>${title}</h1>
